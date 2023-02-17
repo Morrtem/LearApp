@@ -1,0 +1,49 @@
+﻿<Window x:Class="LearApp.View.Services.Windows.WindowSchool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearApp.View.Services.Windows"
+        mc:Ignorable="d"
+         Title="Learn" Height="500" Width="860"
+        MinHeight="500" MinWidth="850"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource BaseWindow}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0"
+              Grid.Row="0"
+              HorizontalAlignment="Center"
+              Background="{StaticResource SecondColor}">
+            <StackPanel VerticalAlignment="Top">
+                <Image x:Name="ImageMain"
+                       Width="140"
+                       Margin="15"/>
+                <TextBlock Text="Школа иностранных языков Learn" TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom">
+                <Button x:Name="BtnBack" 
+                        Content="Вернуться назад"
+                        Click="BtnBack_Click"/> 
+                <Button x:Name="BtnLogin" 
+                        Content="Администратор"
+                        Click="BtnLogin_Click"/>
+                <Button x:Name="BtnExit" 
+                        Content="Выйти"
+                        Click="BtnExit_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Frame Grid.Column="1"
+               x:Name="FrameMain"
+               NavigationUIVisibility="Hidden"
+               ContentRendered="FrameMain_ContentRendered"/>
+    </Grid>
+</Window>

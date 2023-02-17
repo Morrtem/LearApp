@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="LearApp.View.Services.UC.UserControlService"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearApp.View.Services.UC"
+             mc:Ignorable="d"  
+             Style="{StaticResource BaseUC}">
+
+    <Grid
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Image x:Name="ImageSource" Margin="15"/>
+        </Grid>
+
+        <StackPanel Grid.Column="1" Margin="5">
+            <TextBlock Text="{Binding Title, StringFormat={}Услуга: {0}}" FontWeight="Bold" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Cost, StringFormat={}Цена: {0} рублей}" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding DurationInSeconds, StringFormat={}Длительность: {0} секунд}" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" x:Name="DGAdmin" Orientation="Horizontal">
+            <Button x:Name="btnEdit" HorizontalAlignment="Center" Content="Редактировать" Click="btnEdit_Click"/>
+            <Button x:Name="btnDelete" HorizontalAlignment="Right" Content="Удалить" Click="btnDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
